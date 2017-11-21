@@ -19,10 +19,25 @@ angular.module('authService', [])
 			username: username,
 			password: password
 		})
-			.then(function(data) {
+			 .then(function(data) {
 				AuthToken.setToken(data.token);
        			return data;
-			});
+		 });
+			/*.then(function successCallback(response) {
+				console.log("Entered in successCallback ");
+				console.log(JSON.stringify(response.data));
+				console.log(response.status);
+				console.log(response.statusText);
+				AuthToken.setToken(response.token);
+				return response;
+				alert('Registered Sucessfully');
+				
+			}, function errorCallback(response) {
+				console.log("Entered in errorCallback ");
+				console.log(response.xhrStatus);
+				console.log(response.status);
+				console.log(response.statusText);
+		  });*/
 	};
 
 	// log a user out by clearing the token
