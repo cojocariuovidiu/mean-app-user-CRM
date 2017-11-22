@@ -28,12 +28,13 @@ angular.module('mainCtrl', [])
 		Auth.login(vm.loginData.username, vm.loginData.password)
 			.then(function(data) {
 				vm.processing = false;			
-
+				
 				// if a user successfully logs in, redirect to users page
 				if (data.data.success==true)			
 					$location.path('/users');
-				else 
-					vm.error = data;
+				else {
+					vm.error = data.data.message;
+				}
 				
 			});
 	};

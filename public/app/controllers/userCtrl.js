@@ -9,7 +9,7 @@ angular.module('userCtrl', ['userService'])
 
 	// grab all the users at page load
 	User.all()
-.then(function successCallback(response) {
+/*.then(function successCallback(response) {
 	console.log("Entered in successCallback ");
 	console.log(JSON.stringify(response.data));
 	console.log(response.status);
@@ -21,15 +21,15 @@ angular.module('userCtrl', ['userService'])
 	console.log(response.xhrStatus);
 	console.log(response.status);
 	console.log(response.statusText);
-});
-	// .then(function(data) {
+});*/
+	 .then(function(data) {
 
-		// 	// when all the users come back, remove the processing variable
-		// 	vm.processing = false;
+		 	// when all the users come back, remove the processing variable
+		 	vm.processing = false;
 
-		// 	// bind the users that come back to vm.users
-		// 	vm.users = data;
-		// });
+			// bind the users that come back to vm.users
+		 	vm.users = data;
+		 });
 
 	// function to delete a user
 	vm.deleteUser = function(id) {
@@ -71,7 +71,7 @@ angular.module('userCtrl', ['userService'])
 			.then(function(data) {
 				vm.processing = false;
 				vm.userData = {};
-				vm.message = data.message;
+				vm.message = data.data.message;
 			});
 			
 	};	
@@ -108,7 +108,7 @@ angular.module('userCtrl', ['userService'])
 				vm.userData = {};
 
 				// bind the message from our API to vm.message
-				vm.message = data.message;
+				vm.message = data.data.message;
 			});
 	};
 

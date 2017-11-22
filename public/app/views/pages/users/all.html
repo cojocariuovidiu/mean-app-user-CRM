@@ -1,4 +1,9 @@
+
+
 <div class="page-header">
+		
+			
+			
 	<h1>
 		Users 
 		<a href="/users/create" class="btn btn-default">
@@ -14,7 +19,7 @@
 	<p>Loading Users...</p>
 </div>
 
-<table class="table table-bordered table-striped" ng-show="user.users">
+<table class="table table-bordered table-striped" ng-show="user.users" >
 	<thead>
 		<tr>
 			<th>_id</th>
@@ -24,7 +29,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="person in user.users">
+		<tr ng-repeat="person in user.users.data">
 			<td>{{ person._id }}</td>
 			<td>{{ person.name }}</td>
 			<td>{{ person.username }}</td>
