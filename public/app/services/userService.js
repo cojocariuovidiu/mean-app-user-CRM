@@ -12,7 +12,7 @@ angular.module('userService', ['authService'])
 
 	// get all users
 	userFactory.all = function() {
-		return $http.get('/api/users/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU2F0eWEiLCJ1c2VybmFtZSI6IlNhdHlhIiwiaWF0IjoxNTExMzMyNjYwLCJleHAiOjE1MTE0MTkwNjB9.VYe7ICpCfvFXxfTulx5dHJMI6eoYXZRRUMHoo6NTCVs');
+		return $http.get('/api/users/');
 	};
 
 	// create a user
